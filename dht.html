@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Linking BoxIcon for Icons -->
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- page1 -->
+    <section id="page1" class="page">
+      <header>Weather</header>
+      <section class="weather-part">
+        <div class="weather-icon">
+          <img src="icons/cloud.svg">
+        </div>
+        <div class="location" id="location">Your Location</div>
+        <div class="weather-status" id="dht_weather">Weather Status</div>
+      </section>
+      <!-- dht -->
+      <section class="dht-part">
+        <div class="thermometer-icon">
+          <i class='bx bxs-thermometer'></i>
+        </div>
+        <div class="temp">
+          <p>Temperature</p>
+          <span class="numb" id="dht_temp">0</span>
+          <span class="deg">°C</span>
+        </div>
+        <div class="humidity-icon">
+          <i class='bx bxs-droplet-half'></i>
+        </div>
+        <div class="humi">
+          <p>Humidity</p>
+          <span class="humidity" id="dht_hum">0</span>
+          <span class="percent">%</span>
+        </div>
+      </section>
+      <!-- get data -->
+      <section class="get_button">
+        <button type="button" id="get_data">Get Data</button>
+      </section>
+    </section>
+
+    <!-- Page 2 -->
+    <section id="page2" class="page" style="display:none;">
+      <header>Lamp</header>
+      <div class="lamp">
+        <div class="lamp-status" id="lamp_status">Lamp Status</div>
+        <i class='bx bx-bulb'></i>
+        <!-- get data -->
+        <section class="lamp_button">
+          <button type="button" id="lamp_on">On</button>
+        <button type="button" id="lamp_off">Off</button>
+        </section>
+      </div>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <section class="input-part">
+      <button type="button" id="page1-btn" class="nav-btn"><</button>
+      <button type="button" id="menu" class="main-btn">Menu</button>
+      <button type="button" id="page2-btn" class="nav-btn">></button>
+    </section>
+    <div id="menu-popup" class="popup">
+      <button class="popup-close" id="popup-close">x</button>
+      <ul>
+        <li><button id="page1-btn-popup">Weather page</button></li>
+        <li><button id="page2-btn-popup">Lamp page</button></li>
+        <!-- Add more pages as needed -->
+      </ul>
+    </div>
+  </div>
+  <!-- Linking the JavaScript File -->
+  <script src="temp.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #43AFFC;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+header {
+  font-size: 40px;
+  font-weight: bold;
+  color: #43AFFC;
+  padding: 16px 0;
+  text-align: center;
+  align-items: center;
+}
+
+/* page1 */
+.weather-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.weather-icon img {
+  max-width: 125px;
+  margin: 5px 0;
+}
+.location {
+  font-size: 18px;
+  text-align: center;
+  font-weight: normal;
+  color: #0d74be;
+}
+.weather-status {
+  font-size: 22px;
+  text-align: center;
+  color: #333;
+}
+/* dht */
+.dht-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dht-part .thermometer-icon i, 
+.dht-part .humidity-icon i {
+  font-size: 50px;
+  color: #3a3c48;
+}
+.dht-part .temp, 
+.dht-part .humi {
+  text-align: center;
+  font-size: 20px;
+}
+.dht-part .temp .numb, 
+.dht-part .temp .deg, 
+.dht-part .humi .humidity, 
+.dht-part .humi .percent {
+  font-size: 20px;
+  margin: 5px 0;
+}
+.get_button {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-top: 10px;   
+  gap: 10px;       
+}
+.get_button button {
+  color: #f6f5f5;
+  background: #4d505a;
+  transition: 0.3s ease; /* Transition for background change */
+  font-weight: normal;
+  font-size: 15px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.get_button button:hover {
+  background: #1b4a6c; 
+}
+.get_button button:focus {
+  background: #3cca5a;
+}
+
+/* page2 */
+.lamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.lamp .lamp-status{
+  font-size: 20px;
+  color: #3c3c3d;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.lamp i {
+  font-size: 70px;
+  color: #3a3c48;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.lamp_button {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-top: 10px;   
+  gap: 10px;   
+}
+.lamp_button button {
+  color: #f6f5f5;
+  background: #4d505a;
+  transition: 0.3s ease; /* Transition for background change */
+  font-weight: normal;
+  font-size: 15px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.lamp_button button:hover {
+  background: #1b4a6c; 
+}
+.lamp_button #lamp_on:focus {
+  background: #3cca5a;
+}
+.lamp_button #lamp_off:focus {
+  background: #ef3e3e;
+}
+
+/* buttons */
+.input-part {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn {
+  color: #f6f5f5;
+  background: #3f99f3;
+  transition: 0.3s ease;
+  font-weight: normal;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.main-btn {
+  color: #f6f5f5;
+  background: #3f99f3;
+  transition: 0.3s ease;
+  font-weight: normal;
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.nav-btn:hover,
+.main-btn:hover {
+  background: #194e73;
+}
+
+.nav-btn:focus,
+.main-btn:focus {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
+  outline: none;
+  border: 1px solid #3f99f3;
+}
+
+/* pop up */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 300px;
+}
+.popup .popup-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 10px;
+  padding: 10px 10px;
+  cursor: pointer;
+  background: #f9483e;
+}
+.popup ul {
+  list-style-type: none;
+  padding: 0;
+}
+.popup li {
+  margin: 10px 0;
+}
+
+.popup button {
+  background: #2a9fed;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background: #0056b3;
+}
+
+/* Hide pages initially */
+.page {
+  display: none;
+}
